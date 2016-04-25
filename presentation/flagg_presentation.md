@@ -43,17 +43,17 @@ output:
     - Simulation study
 
 
-## Unexploded Ordnance {data-transition="fade"}
+## Unexploded Ordnance
 
 ![Situation](flagg_presentation_files/presentation_images/situation.gif)
 
 
-## Unexploded Ordnance {data-transition="none"}
+## Unexploded Ordnance
 
 ![Boom](flagg_presentation_files/presentation_images/boom.gif)
 
 
-## Unexploded Ordnance {data-transition="none"}
+## Unexploded Ordnance
 
 ![Boom](flagg_presentation_files/presentation_images/noboom.gif)
 

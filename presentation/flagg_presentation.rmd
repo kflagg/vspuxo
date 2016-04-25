@@ -76,17 +76,12 @@ load('../datasets/easy/results/easy_exp2areas.RData')
 - Military activities leave debris behind
     - Including explosive munitions
 - Hazardous sites should be remediated
-<!--    - Motlow, TN [@motlowdemo]
-    - Helena Valley, MT [@nephelena] -->
 - Statistics can reduce costs
 - Visual Sample Plan [@vsp]
     - Software popular with DoD contractors
 - My project:
     - Understand how sample plan inputs affect VSP mapping
     - Simulation study
-
-
-<!-- # Background: Unexploded Ordnance -->
 
 
 ## Unexploded Ordnance {data-transition="fade"}
@@ -109,17 +104,6 @@ load('../datasets/easy/results/easy_exp2areas.RData')
 - Target of interest (TOI) -- munitions-related item which could be
 unexploded ordnance (UXO)
 - Anomaly -- any item detected by a metal detector
-
-
-<!-- ## Background: Detecing UXO
-
-- UXO items are a subset of TOI items
-- It is assumed most TOI items are located in TAs that can be mapped
-- Non-TOI anomalies are considered background noise
-    - Assumed to be homogeneously distributed with low spatial density
-- High density regions are possible TAs
-- Sites surveyed with magnetometers or DGM equipment
-    - Anomaly locations recorded and spatial density analyzed -->
 
 
 ## Spatial Anomaly Density
@@ -151,57 +135,17 @@ mtext('Anomalies per Acre', 4)
 ```
 
 
-<!-- # Clean-Up (Remediation) -->
-
-
-<!-- ## Clean-Up (Remediation)
-
-### Before the project:
-- Define project objectives/success criteria
-    - What is an acceptable amount of TOI to remain at the site?
-    - How much uncertainty is permittable?<br />
-&nbsp;
-
-### Steps of the clean-up project:
-1. Collect information to identify regions needing remediation
-    - Historical records
-    - Sampling, if necessary
-2. Clear identified regions of all possible targets
-3. Verification sampling
-    - Confirm that the cleanup was successful
-    - "We are Y% confident that at least X% of the site area is free of UXO"
--->
-
-<!-- # Visual Sample Plan -->
-
-
-<!-- ## Visual Sample Plan: Overview
-
-- Transect and grid sampling plans for spatial data
-- Hypothesis tests and confidence intervals for means and proportions
-- Kriging to map predicted repsonses across a site
-- A suite of UXO features
-    - I focus on a few features for mapping TAs -->
-
 # Visual Sample Plan Overview
 
 
 ## Target Area Identification Features
 
 - Systematic transect sampling plans
-<!--    - Calculates probability of detecting TA of user-specified size
-    - TA is "detected" if any transect crosses it -->
 - Analyze sample data
     - Moving average anomaly density
     - Semivariogram models
     - Ordinary Kriging
     - Delineate high-density regions
-
-
-<!-- ## Detection Probability Curve
-
-<img alt="VSP screenshot showing a detection probability curve"
-src="../images/vspeasyta1bg100.png" height=450px /> -->
 
 
 ## Parallel Transect Sampling Plan
@@ -210,60 +154,10 @@ src="../images/vspeasyta1bg100.png" height=450px /> -->
 src="../images/vspxsect390.png" height=450px />
 
 
-<!-- ## Moving Average Search Window
-
-```{r windows, eval=FALSE, fig.height=5}
-ldens <- read.geoeas('../include/vsp.dat')
-ldens$X <- ldens$X-1556870
-ldens$Y <- ldens$Y-535421
-layout(rbind(c(1, 2)), width = c(4, 3))
-par(mar = c(2, 2, 0, 0))
-plot(dilation(sitewindow, 200), show.all = FALSE, type = 'n')
-plot(sitewindow, add = TRUE)
-for(i in 1:nrow(ldens)){
-  plot(disc(400, c(ldens$X[i], ldens$Y[i])), border = '#00000040', add = TRUE)
-}
-points(ldens$X, ldens$Y, pch = '.', col = 'blue', cex = 2)
-axis(1, at = axTicks(1), labels = prettyNum(axTicks(1), big.mark = ','))
-axis(2, at = axTicks(2), labels = prettyNum(axTicks(2), big.mark = ','))
-
-thexsects <- union.owin(owin(c(-0.1, 0.1), c(0, 1)),
-                        owin(c(0.4, 0.6), c(0, 0.6)),
-                        owin(c(0.4, 1.2), c(0.6, 0.8)))
-thewindow <- disc(0.45, c(0.5, 0.5))
-centers <- cbind('y' = c(seq(0, 1, 0.15), seq(0.05, 0.35, 0.15), rep(0.5, 3)),
-                 'x' = c(rep(0.2, 7), rep(0.5, 2), seq(0.5, 1, 0.15)))
-set.seed(3465)
-anomalies <- rpoispp(50, win = thexsects)
-par(mar = c(0, 0, 0, 0))
-plot(owin(c(-0.2, 1.2), c(-0.2, 1.2)), show.all = FALSE, type = 'n')
-plot(intersect.owin(thewindow, thexsects),
-     col = 'lightgrey', border = NA, add = TRUE)
-segments(x0 = c(-0.1, 0.1, 0.4, 0.4, 0.6, 0.6),
-         y0 = c( 0,   0,   0,   0.8, 0,   0.6),
-         x1 = c(-0.1, 0.1, 0.4, 1.2, 0.6, 1.2),
-         y1 = c( 1,   1,   0.8, 0.8, 0.6, 0.6), col = 'darkgrey')
-plot(anomalies[complement.owin(thewindow, owin(c(-0.2, 1.2), c(-0.1, 1.1)))],
-     add = TRUE, pch = 19, col = 'black')
-plot(anomalies[thewindow], add = TRUE, pch = 19, col = 'red')
-plot(thewindow, add = TRUE)
-```
--->
-
-
-<!-- ## Visual Sample Plan: Example Semivariogram
-
-<img alt="VSP screenshot showing an estimated semivariogram"
-src="../images/vspvario.png" height=450px /> -->
-
-
 ## Anomaly Density Map
 
 <img alt="VSP screenshot showing estimated anomaly density and high
 density regions" src="../images/vspgeomap.png" height=450px />
-
-
-<!-- # Simulation Study -->
 
 
 # What inputs affect the delineation the most?
@@ -283,18 +177,6 @@ density regions" src="../images/vspgeomap.png" height=450px />
         - Levels: Too Small, TA1, TA2, Too Large
     - VSP input TA anomaly density
         - 100/acre, 200/acre, 400/acre
-
-<!-- All other inputs are held constant -->
-
-
-<!-- ## Easy Site
-
-- 952.4 acres
-- Two elliptical TAs
-- Realizations of spatial Poisson processes
-    - Homogeneous 100 anomalies/acre background
-    - 200 anomalies/acre above background at TA centers
-        - Gaussian intensity function -->
 
 
 ## Easy Site
@@ -358,292 +240,6 @@ mtext('Feet', c(1, 2), 3)
 axis(1, at = axTicks(1), labels = prettyNum(axTicks(1), big.mark = ','))
 axis(2, at = axTicks(2), labels = prettyNum(axTicks(2), big.mark = ','))
 ```
-
-
-<!-- # Analysis
-
-
-## Analysis
-
-- Rule to decide if a location belongs to a possible TA:
-    - VSP:
-$$\widehat{\mathrm{Density}} > \text{User-specified threshold}$$
-    - My analysis:
-$$\widehat{\mathrm{Density}} > 100+1.645\times\sqrt{\text{Kriging variance}}$$
-
-- How possible TA boundaries are defined:
-    - VSP fits polygons around areas
-    - I simply use the edges of grid cells
-- Semivariogram fitting
-    - I use weighted least squares [@cressie]
-    - VSP's method is undocumented but behaves like WLS
-- Delineated regions under 3 acres are ignored
-- Other aspects are as similar to VSP as possible
-- Software used:
-    - R 3.2.3 [@baser]
-    - spatstat 1.43-0 [@spat15]
-    - GSLIB [@newgslib]
-
-
-## Comparison With VSP Delineation
-
-```{r delin, eval=FALSE}
-par(mfrow = c(1, 2), mar = c(1, 2, 1, 0), bty = 'n')
-vsp <- readPNG('../images/vspgeomap.png')
-plot(NULL, xlim = c(-150, 841), ylim = c(0, 644), asp = 1, axes = FALSE)
-rasterImage(vsp, 0, 0, 841, 644)
-
-nreps <- 3000
-nsamp <- 100
-
-# Site parameters
-width <- 6
-bg.dens <- 100
-fg.dens <- 200 # TRUE density for the simulation
-
-# Sampling plan parameters (treatments)
-ta.prior <- c('Small', 'TA1', 'TA2', 'Large')
-fg.prior <- c(100, 200, 400)
-spacings <- matrix(c(40, 125, 170, 270,
-                    100, 225, 390, 565,
-                    220, 465, 655, 935), ncol = 3)
-window.sizes <- 0.9 * c(566, 800, 900, 1273)
-ncells <- length(ta.prior) * length(fg.prior)
-nobs <- nsamp * ncells
-
-# Corners of site and number of discretized rows and columns
-corners <- vertices(Frame(sitewindow))
-xmin <- min(corners$x) + window.sizes / 12
-ymin <- min(corners$y) + window.sizes / 12
-nx <- ceiling(6 * (max(corners$x) - min(corners$x)) / window.sizes)
-ny <- ceiling(6 * (max(corners$y) - min(corners$y)) / window.sizes)
-
-itr <- 100
-ta <- 3
-fg <- 2
-r <- (itr-1) * ncells
-
-krige.out <- read.geoeas('../datasets/easy/exp2/rep2000_s0390_k.out')
-krige.out[krige.out$Estimate == -999,] <- rep(NA, 2)
-kest <- im(matrix(krige.out$Estimate, nrow = ny[ta], byrow = TRUE),
-           seq(xmin[ta], length.out = nx[ta], by = window.sizes[ta]/6),
-           seq(ymin[ta], length.out = ny[ta], by = window.sizes[ta]/6),
-           unitname = c('foot', 'feet'))
-kvar <- im(matrix(krige.out$EstimationVariance, nrow = ny[ta], byrow = TRUE),
-           seq(xmin[ta], length.out = nx[ta], by = window.sizes[ta]/6),
-           seq(ymin[ta], length.out = ny[ta], by = window.sizes[ta]/6),
-           unitname = c('foot', 'feet'))
-
-# Get the delineated regions, if there are any
-highdens <- kest > bg.dens + qnorm(0.95) * sqrt(kvar)
-if(sum(highdens) > 0){
-  identified <- connected(highdens, background = FALSE)
-  theareas <- sapply(levels(identified$v), function(x){
-      return(area(Window(connected(identified==x,
-                                 background = FALSE))[sitewindow]))
-    })
-
-  # Ignore regions less than 3 acres
-  ignore <- which(theareas < 3*43560)
-  theareas[ignore] <- NA
-  theidentcount <- sum(!is.na(theareas))
-  for(i in ignore){
-    identified$v[identified$v==i] <- NA
-  }
-}
-if(theidentcount > 0){
-  idboundary <- as.polygonal(Window(identified))[sitewindow]
-  Window(identified) <- idboundary
-}
-
-par(mar = c(1, 0, 1, 2))
-Window(kest)<-sitewindow
-plot(kest, main = '')
-plot(idboundary, add = TRUE)
-```
--->
-
-
-<!-- ## Simulated Sites
-
-- Easy
-    - Two TAs
-    - Homogeneous background
-- Medium
-    - Three TAs
-    - Background: Homogeneous background, except along roads where density
-is higher
-- Hard
-    - Three TAs
-    - Background: Clustered, plus higher density along roads and in a
-14.7 acre field -->
-
-
-<!-- # Window Size Experiment -->
-
-<!-- ## Window Size Experiment
-
-- Goals:
-    - Investigate effect of window diameter on results
-    - Choose window sizes for the Prior Info Experiment
-        - VSP user's guide suggestion: Choose diameter between the transect
-spacing and the TA size [@userguide]
-- 200 realizations of the _easy_ site -- took 14 hours to analyze
-    - 6 foot wide transects and 225 feet between transects
-- Five window sizes used
-    - 150 ft, 228 ft, 516 ft, 798 ft, 1,500
-- Responses considered:
-    - Detection rate of TOI items
-    - Proportion of true area delineated
-    - Total area delineated
-    - Number of disjoint regions delineated
-
-
-## Window Size Experiment
-
-```{r exp11, eval=FALSE}
-## EXPERIMENT PARAMETERS
-nreps <- 3000
-nsamp <- 200
-spacing <- 225
-width <- 6
-bg.dens <- 100
-fg.dens <- 200
-
-load(paste0('../datasets/easy/results/easy_winresults_sp', spacing,
-            '_fg', fg.dens, '.RData'))
-load(paste0('../datasets/easy/results/easy_winndist_sp', spacing,
-            '_fg', fg.dens, '.RData'))
-load(paste0('../datasets/easy/results/easy_winareas_sp', spacing,
-            '_fg', fg.dens, '.RData'))
-window.sizes <- unique(results$win)
-
-cols <- c('#404040', '#00ffff', '#ff0000', '#0000ff',
-          '#00ff00')#, '#ff00ff', '#ffff00')
-dcols <- c('#181818', '#006060', '#600000', '#000060',
-           '#006000')#, '#600060', '#606000')
-colsa6 <- paste0(cols, '60')
-colsa4 <- paste0(cols, '40')
-colsa3 <- paste0(cols, '30')
-colsa2 <- paste0(cols, '20')
-dcolsa6 <- paste0(dcols, '60')
-
-exp1legend <- function(){
-  par(mar = c(0, 0, 0, 0))
-  plot.new()
-  legend('center', ncol = 3, bty = 'n',
-         pch = c(rep(22, 5), 124), col = c(dcols, 'darkred'),
-         pt.cex = c(rep(1, 5), 1.5), pt.bg = c(colsa6, 'darkred'),
-         legend = c(paste(prettyNum(window.sizes, big.mark = ','),
-                          'Foot Kriging Window'), 'Truth'))
-  invisible()
-}
-
-exp1legendnotrue <- function(){
-par(mar = c(0, 0, 0, 0))
-plot.new()
-legend('center', ncol = 3, bty = 'n',
-       pch = rep(22, 5), col = dcols, pt.bg = colsa6,
-       legend = paste(prettyNum(window.sizes, big.mark = ','),
-                      'Foot Kriging Window'))
-  invisible()
-}
-
-exp1legendcirc <- function(){
-  par(mar = c(0, 0, 0, 0))
-  plot.new()
-  legend('center', ncol = 3, bty = 'n',
-         pch = c(rep(21, 5), 124), col = c(dcols, 'darkred'),
-         pt.cex = c(rep(1, 5), 1.5), pt.bg = c(colsa6, 'darkred'),
-         legend = c(paste(prettyNum(window.sizes, big.mark = ','),
-                          'Foot Kriging Window'), 'Truth'))
-}
-
-exp1legendcircnotrue <- function(){
-  par(mar = c(0, 0, 0, 0))
-  plot.new()
-  legend('center', ncol = 3, bty = 'n',
-         pch = rep(21, 5), col = dcols, pt.bg = colsa6,
-         legend = paste(prettyNum(window.sizes, big.mark = ','),
-                        'Foot Kriging Window'))
-}
-```
-
-```{r exp12, eval=FALSE, dependson='exp11'}
-layout(matrix(c(1, 3, 2, 3), nrow = 2), height = c(5, 1))
-par(mar = c(4, 1, 1, 1))
-histby(detect ~ win, data = results, quantile = FALSE, reversex1 = TRUE,
-       breaks = seq(0, 1, 0.02), xlim = c(0, 1),
-       main = 'Detection Rate of TOI Items',
-       xlab = 'Detection Rate',
-       border = dcols, col = colsa6, qcol = dcolsa6, space1 = 0.03)
-histby(I(detectarea/area(TAs.easy)) ~ win, data = results,
-       quantile = FALSE, reversex1 = TRUE,
-       breaks = seq(0, 1, 0.02), xlim = c(0, 1),
-       main = 'Proportion of True TA Area Detected',
-       xlab = 'Proportion Detected',
-       border = dcols, col = colsa6, qcol = dcolsa6, space1 = 0.03)
-exp1legendnotrue()
-```
-
-
-## Window Size Experiment
-
-```{r exp13, eval=FALSE, dependson='exp11'}
-layout(matrix(c(1, 3, 2, 3), nrow = 2), height = c(5, 1))
-par(mar = c(4, 1, 2.5, 1))
-histby(I(identarea/43560) ~ win, data = results,
-       quantile = FALSE, reversex1 = TRUE,
-       breaks = seq(0, 540, 6), xlim = c(0, 540),
-       main = 'Total Area of Delineated Regions',
-       xlab = 'Area in Acres',
-       border = dcols, col = colsa6, space1 = 0.03)
-abline(v = area(TAs.easy)/43560, col = 'darkred')
-par(mar = c(4, 3.5, 2.5, 0))
-plot(I(detectarea/area(TAs.easy)) ~ identcount, data = results,
-     col = colsa6[factor(win)], bg = colsa4[factor(win)],
-     pch = 21, ylim = c(0, 1),
-     main = 'Proportion of True TA Area Detected vs
-Number of Distinct Regions Identified',
-     xlab = 'Number of Regions',
-     ylab = 'Proportion')
-abline(v = 2, col = 'darkred')
-exp1legend()
-```
-
-
-## Window Size Experiment: Conclusions
-
-- Large windows sizes
-    - Most or all TOI detected
-    - Very large area delineated
-- Smallest window size
-    - Too many tiny regions found
-    - Poor description of true TAs
-- Need to find a tradeoff
-    - 90% of the prior TA size is used as the window diameter for the
-prior info experiment -->
-
-
-<!-- # Prior Info Experiment
-
-
-## Prior Info Experiment
-
-- Goals:
-    - Investigate effect of prior knowledge on results
-        - Four prior TA sizes
-        - Three prior density estimates
-- 100 realizations of the _easy_ site -- took 25 hours to analyze
-    - 6 foot wide transects
-    - Spacing chosen to detect the TA of interest with 99% probabilty
-    - Window diameter is 90% of the prior TA size
-- Responses considered:
-    - Detection rate of TOI items
-    - Proportion of true area delineated
-    - Total area delineated
-    - Number of disjoint regions delineated
-    - Length of transects -->
 
 
 # Results
@@ -781,12 +377,6 @@ exp2elegendcirc()
 ```
 
 
-<!-- ## Prior Info Experiment: Medium Site
-
-
-## Prior Info Experiment: Hard Site -->
-
-
 # Conclusions
 
 
@@ -856,5 +446,6 @@ axis(2, at = axTicks(2), labels = prettyNum(axTicks(2), big.mark = ','))
 
 
 # References
+
 
 ## References
