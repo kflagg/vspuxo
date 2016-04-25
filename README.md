@@ -18,8 +18,9 @@ All of these are free, but you need to create an account at the VSP site before 
 
 # Additional Software Needed to Build the Presentation and Paper
 
+* [TeX Live](https://www.tug.org/texlive/)
+* [Pandoc](http://www.pandoc.org/)
 * R packages:
-    * [TeX Live](https://www.tug.org/texlive/)
     * [knitr](http://www.yihui.name/knitr/)
     * [extrafont](https://cran.r-project.org/web/packages/extrafont/index.html)
     * [rmarkdown](http://rmarkdown.rstudio.com/)
