@@ -20,5 +20,6 @@ All of these are free, but you need to create an account at the VSP site before 
 
 * R packages:
     * [knitr](http://www.yihui.name/knitr/)
+    * [extrafont](https://cran.r-project.org/web/packages/extrafont/index.html)
     * [rmarkdown](http://rmarkdown.rstudio.com/)
     * [revealjs](https://cran.r-project.org/web/packages/revealjs/index.html)
