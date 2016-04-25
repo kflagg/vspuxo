@@ -20,7 +20,7 @@ output:
     css: "custom.css"
     transition: "slide"
     incremental: TRUE
-    self_contained: TRUE
+    self_contained: FALSE
 ---
 
 

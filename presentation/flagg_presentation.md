@@ -20,7 +20,7 @@ output:
     css: "custom.css"
     transition: "slide"
     incremental: TRUE
-    self_contained: TRUE
+    self_contained: FALSE
 ---
 
 
@@ -239,3 +239,10 @@ TA2 (2,000 ft by 900 ft, 32.4 acres)</td>
 
 
 ## References
+
+<div class="references">
+<p>Matzke, Brett, John Wilson, Lisa Newburn, S.T. Dowson, John Hathaway, L.H. Sego, L.M. Bramer, and Brent Pulsipher. 2014. <em>Visual Sample Plan Version 7.0 User’s Guide</em>. Richland, Washington: Pacific Northwest National Laboratory. <a href="http://vsp.pnnl.gov/docs/PNNL-23211.pdf" class="uri">http://vsp.pnnl.gov/docs/PNNL-23211.pdf</a>.</p>
+<p>Neptune and Company, Inc. 2008. “Helena Valley Probabilistic Risk Assessment of MEC for the Montana Army National Guard.”</p>
+<p>Pulpisher, Brent, John Hathaway, Brett Matzke, John Wilson, and Lisa Newburn. 2014. <em>Demonstration Report for Visual Sample Plan Remedial Investigation (VSP-RI) Sampling Methods at the Motlow Site in Tennessee</em>. Richland, Washington: Pacific Northwest National Laboratory. <a href="http://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23210.pdf" class="uri">http://www.pnnl.gov/main/publications/external/technical_reports/PNNL-23210.pdf</a>.</p>
+<p>VSP Development Team. 2016. <em>Visual Sample Plan: A Tool for Design and Analysis of Environmental Sampling</em>. Richland, Washington: Pacific Northwest National Laboratory. <a href="http://vsp.pnnl.gov/" class="uri">http://vsp.pnnl.gov/</a>.</p>
+</div>
