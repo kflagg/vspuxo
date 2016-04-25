@@ -7,7 +7,7 @@ You can find the presentation [here](presentation/flagg_presentation.md). The pa
 
 # Software Needed to Run the Simulations
 
-All of these are free, but you need to create an account at the VSP site before downloading the software.
+All of these are free, but you need to create an account at the VSP site before downloading it.
 
 * [Visual Sample Plan](http://vsp.pnnl.gov)
 * [GSLIB (64-bit)](http://www.gslib.com)
@@ -19,6 +19,7 @@ All of these are free, but you need to create an account at the VSP site before 
 # Additional Software Needed to Build the Presentation and Paper
 
 * R packages:
+    * [TeX Live](https://www.tug.org/texlive/)
     * [knitr](http://www.yihui.name/knitr/)
     * [extrafont](https://cran.r-project.org/web/packages/extrafont/index.html)
     * [rmarkdown](http://rmarkdown.rstudio.com/)
