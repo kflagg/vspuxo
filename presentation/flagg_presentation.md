@@ -1,30 +1,8 @@
----
-title: "Visual Sample Plan and Prior Information: What do we need to know
-to find UXO?"
-author: "Kenneth A. Flagg"
-date: |
-  | Montana State University
-  | April 11, 2016
-  | Megan Higgs, Advisor
-bibliography: ../writeup/flagg_references.bib
-nocite: |
-  @nephelena, @userguide, @motlowdemo
-output:
-  revealjs::revealjs_presentation:
-    fig_height: 6
-    fig_width: 10
-    fig_crop: FALSE
-    height: "960px"
-    width: "720px"
-    theme: "beige"
-    css: "custom.css"
-    transition: "slide"
-    incremental: TRUE
-    self_contained: FALSE
----
+# Visual Sample Plan and Prior Information: What do we need to know to find UXO?
 
-
-
+## Kenneth A. Flagg, Montana State University
+### April 11, 2016
+### Megan Higgs, Advisor
 
 
 # Introduction and Background

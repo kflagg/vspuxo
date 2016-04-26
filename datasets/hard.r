@@ -41,7 +41,7 @@ ranchwindow <- owin(c(1561300, 1562100), c(537900, 538700))
 set.seed(23467)
 seeds <- sample(2^32-1, nreps)-2^31
 
-cat(sprintf('Simulating %d Medium Sites\n', nreps))
+cat(sprintf('Simulating %d Hard Sites\n', nreps))
 pb <- txtProgressBar(max = nreps, style = 3)
 timing <- system.time(for(repl in 1:nreps){
   set.seed(seeds[repl])
