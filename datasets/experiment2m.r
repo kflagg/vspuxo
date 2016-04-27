@@ -1,13 +1,14 @@
 # North-South Transect sampling from the medium site,
 # with twelve different sampling plans.
+require(tcltk)
 require(spatstat)
 source('rfns/data_functions.r')
 source('rfns/sampling_functions.r')
 source('rfns/spatial_functions.r')
 
 # Paths to command-line versions of GAM and KT3D
-gamv_exe <- 'gamv.exe'
-kt3d_exe <- 'kt3d.exe'
+gamv_exe <- 'gamv'
+kt3d_exe <- 'kt3d'
 
 # Paths to input/output
 fulldir <- 'datasets/medium/full'
@@ -127,14 +128,14 @@ areas2m <- array(list(), dim = c(nsamp, length(ta.prior), length(fg.prior)),
 
 
 # Loop for each realization
-pb <- winProgressBar(max = nsamp+1, min = 1, initial = 1,
+pb <- TkProgressBar(max = nsamp+1, min = 1, initial = 1,
                      title = 'Sampling and Kriging',
                      label = 'Sampling and Kriging')
 timing <- system.time(for(itr in seq_along(samp)){
   r <- (itr-1) * ncells
   repl <- results2m$Realization[r+1]
   set.seed(seeds[repl])
-  setWinProgressBar(pb, r, label = paste0('Iteration ', itr,
+  setTkProgressBar(pb, r, label = paste0('Iteration ', itr,
                                           ': Loading rep ', repl))
 
   # Read the ground truth file
@@ -145,7 +146,7 @@ timing <- system.time(for(itr in seq_along(samp)){
   for(trt in seq_len(ncells)){
     ta <- which(ta.prior==results2m$Target[r+trt])
     fg <- which(fg.prior==results2m$fg[r+trt])
-    setWinProgressBar(pb, itr+trt/ncells,
+    setTkProgressBar(pb, itr+trt/ncells,
                       label = paste0('Iteration ', itr,
                                      ': Analyzing rep ', repl,
                                      ' with spacing ', spacings[ta, fg]))
@@ -293,7 +294,7 @@ timing <- system.time(for(itr in seq_along(samp)){
     }
   }
 })
-setWinProgressBar(pb, nsamp+1, label = 'Done')
+setTkProgressBar(pb, nsamp+1, label = 'Done')
 invisible(close(pb))
 print(timing)
 

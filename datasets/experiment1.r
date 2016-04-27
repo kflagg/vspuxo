@@ -1,13 +1,14 @@
 # North-South Transect sampling from the easy site,
 # with different window sizes.
+require(tcltk)
 require(spatstat)
 source('rfns/data_functions.r')
 source('rfns/sampling_functions.r')
 source('rfns/spatial_functions.r')
 
 # Paths to command-line versions of GAM and KT3D
-gamv_exe <- 'gamv.exe'
-kt3d_exe <- 'kt3d.exe'
+gamv_exe <- 'gamv'
+kt3d_exe <- 'kt3d'
 
 # Paths to input/output
 fulldir <- 'datasets/easy/full'
@@ -103,14 +104,14 @@ areas <- array(list(), dim = c(nsamp, length(window.sizes)),
 
 
 # Loop for each replicate
-pb <- winProgressBar(max = nsamp+1, min = 1, initial = 1,
+pb <- tkProgressBar(max = nsamp+1, min = 1, initial = 1,
                      title = 'Sampling and Kriging',
                      label = 'Sampling and Kriging')
 timing <- system.time(for(repl in samp){
   itr <- which(samp==repl)
   r <- (itr - 1) * ncells
   set.seed(seeds[repl])
-  setWinProgressBar(pb, itr, label = paste0('Iteration ', which(samp==repl),
+  setTkProgressBar(pb, itr, label = paste0('Iteration ', which(samp==repl),
                                             ': Sampling rep ', repl))
 
   ## SAMPLING
@@ -131,7 +132,7 @@ timing <- system.time(for(repl in samp){
 
   # Loop for each window size
   for(w in 1:length(window.sizes)){
-    setWinProgressBar(pb, itr+w/length(window.sizes),
+    setTkProgressBar(pb, itr+w/length(window.sizes),
                       label = paste0('Iteration ', itr, ': Analyzing rep ',
                                   repl, ' with window size ', window.sizes[w]))
     results$length[r+w] <- sample$length
@@ -258,7 +259,7 @@ timing <- system.time(for(repl in samp){
     }
   }
 })
-setWinProgressBar(pb, nsamp+1, label = 'Done')
+setTkProgressBar(pb, nsamp+1, label = 'Done')
 invisible(close(pb))
 print(timing)
 
