@@ -18,7 +18,7 @@ All of these are free, but you need to create an account at the VSP site before 
 
 # Software Needed to Build the Presentation and Paper
 
-* [TeX Live](https://www.tug.org/texlive/)
+* [TeX Live](https://www.tug.org/texlive/) or another LaTeX system
 * [Pandoc](http://www.pandoc.org/)
 * [R](http://www.r-project.org)
 * R packages:
@@ -27,3 +27,9 @@ All of these are free, but you need to create an account at the VSP site before 
     * [extrafont](https://cran.r-project.org/web/packages/extrafont/index.html)
     * [rmarkdown](http://rmarkdown.rstudio.com/)
     * [revealjs](https://cran.r-project.org/web/packages/revealjs/index.html)
+
+If you have [RStudio](https://www.rstudio.com/), you probably have all of the above already set up except for spatstat, extrafont, and revealjs. I use extrafont to make R use a clone of the Computer Modern font in the plots in the paper. After installing the extrafont package, you need to run
+```r
+font_install('fontcm')
+```
+to install the appropriate font package.
