@@ -90,3 +90,9 @@ source('datasets/experiment2m.r')
 source('datasets/experiment2h.r')
 ```
 and go do something else for a week or so while your computer computes many intersections between circles and rectangles.
+
+The only Windows-only part of this project is the illustration of the sampling varability in VSP's detection probability simulation. You can run it with
+```r
+source('datasets/spacings.r')
+```
+which should only take a few minutes. Yay.
