@@ -16,7 +16,7 @@ gauss.elliptic <- function(x, y, mu.x = 0, mu.y = 0, s.a = 1, s.b = 1,
 
 # Parametric semivariograms
 # h is the lag distance, theta = c(nugget, sill, range)
-# ghat is empirical variogram, lags is a vector of lag distances
+# ghat is empirical semivariogram, lags is a vector of lag distances
 
 # Spherical
 sv.sphere <- function(h, theta){

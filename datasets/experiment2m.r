@@ -6,7 +6,7 @@ source('rfns/data_functions.r')
 source('rfns/sampling_functions.r')
 source('rfns/spatial_functions.r')
 
-# Paths to command-line versions of GAM and KT3D
+# Paths to command-line versions of GAMV and KT3D
 gamv_exe <- 'gamv'
 kt3d_exe <- 'kt3d'
 
@@ -78,7 +78,7 @@ nug.start <- 0
 sill.start <- bg.dens / (width*window.sizes/43560)
 
 # The only locations that should be correlated are locations in the same TA,
-# so set an initial range on the same order of magnitude as the TAs sizes.
+# so set an initial range on the same order of magnitude as the TA sizes.
 range.start <- 1000
 
 # Basic starting point for power model:
@@ -188,7 +188,7 @@ timing <- system.time(for(itr in seq_along(samp)){
                          header = FALSE, skip = 3)
     svario <- svario[svario$n>0,]
 
-    # Fit parametric variograms
+    # Fit parametric semivariograms
     params <- list('sphere' = optim(c(nug.start, sill.start[ta], range.start),
                                     sv.wss, lags = svario$lag.dist,
                                     n = svario$n, ghat = svario$semivariogram,
@@ -228,7 +228,7 @@ timing <- system.time(for(itr in seq_along(samp)){
         file = kpar)
 
     # Run KT3D to do the kriging
-    # Note: Value of -999 indicates that the value that was not estimated
+    # Note: Value of -999 indicates that the value that was not computed
     system2(kt3d_exe, input = kpar, wait = TRUE)
 
 
