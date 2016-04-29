@@ -1,9 +1,9 @@
 # Visual Sample Plan and Prior Information: What do we Need to Know to Find UXO?
 ## Kenneth A Flagg, Montana State University
 
-Welcome to the online home of my MS writing project, featuring code and data files. This repository contains everything you need to reproduce my analyses and recreate my sldies and paper without actually running the simulations. It also includes all the code so you can run the simulations yourself.
+Welcome to the online home of my MS writing project, featuring code and data files. This repository contains everything you need to reproduce my analyses and recreate my sldies and paper without actually running the simulations. It also includes all the code so you can run the simulations yourself. I have run everything successfully on Windows 10 and Debian.
 
-You can find the presentation [here](presentation/flagg_presentation.md) and the paper [here](writeup/flagg_writup.pdf).
+You can find the presentation [here](presentation/flagg_presentation.md) and the paper [here](writeup/flagg_writeup.pdf).
 
 # Software Needed to Build the Presentation and Paper
 
@@ -74,13 +74,13 @@ All of these are free, but you need to create an account at the VSP site before 
 
 # Running the Simulations
 
-The simulations are meant to be run from the root directory of the repository. To generate 3,000 realizations of each simulated site, open an R terminal and run
+The simulations are meant to be run from the root directory of the repository. Open an R terminal and run
 ```r
 source('datasets/easy.r')
 source('datasets/medium.r')
 source('datasets/hard.r')
 ```
-Each of these commands could take the better part of a day to run, so be patient.
+to generate 3,000 realizations of each site. Each of these commands could take the better part of a day to run, so be patient.
 
 Next, you will want to create some results to analyze. Make sure the GSLIB executables are somewhere in your path, then run
 ```r
