@@ -1,0 +1,1 @@
+Intermediate files for the prior info experiment go in this directory.

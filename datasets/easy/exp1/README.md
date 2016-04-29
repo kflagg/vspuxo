@@ -1,0 +1,1 @@
+Intermediate files for the window size experiment go in this directory.

@@ -1,0 +1,1 @@
+Sample data from the medium site go in this directory.

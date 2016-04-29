@@ -1,0 +1,1 @@
+Sample data from the easy site go in this directory.

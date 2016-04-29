@@ -1,0 +1,1 @@
+Images used in the paper and presentation go in this directory.

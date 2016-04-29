@@ -1,0 +1,1 @@
+Files used by the presentation and paper go in this directory.
