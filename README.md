@@ -1,9 +1,9 @@
 # Visual Sample Plan and Prior Information: What do we Need to Know to Find UXO?
 ## Kenneth A Flagg, Montana State University
 
-This will soon become the online home of my MS writing project, featuring code and data files. The project is currently hosted on MSU's GitLab. Please email kenneth.flagg@msu.montana.edu to request access.
+Welcome to the online home of my MS writing project, featuring code and data files. This repository contains everything you need to reproduce my analyses and recreate my sldies and paper without actually running the simulations. It also includes all the code so you can run the simulations yourself.
 
-You can find the presentation [here](presentation/flagg_presentation.md). The paper will be posted once it has been approved.
+You can find the presentation [here](presentation/flagg_presentation.md) and the paper [here](writeup/flagg_writup.pdf).
 
 # Software Needed to Build the Presentation and Paper
 
@@ -25,9 +25,7 @@ font_install('fontcm')
 ```
 to install the appropriate font package.
 
-# Building the Presentation and Paper
-
-The repository contains everything you need to reproduce my analyses and recreate my sldies and paper without actually running the simulations.
+# Building the Presentation
 
 To build the presentation slides, open an R terminal in the `presentation` directory and run
 ```r
@@ -37,20 +35,22 @@ to create the standalone HTML presentation.
 
 Or, if you are of the RStudio persuation, simply open `flagg_presentation.rmd` in RStudio and click the "knit" button.
 
+# Building the Paper
+
 To build the paper, open a terminal or command prompt (__not__ an R terminal) in the `writeup` directory and run
-```
+```bash
 Rscript -e "knitr::knit('flagg_presentation.rnw')"
 ```
 to create the LaTeX file. Next, run
-```
+```bash
 pdflatex flagg_presentation.tex
 ```
 to create the PDF. You will probably get messages about undefined references. If so, run
-```
+```bash
 pdflatex flagg_presentation.tex
 ```
 again to cross-reference the figures and bibliography. Finally, run
-```
+```bash
 Rscript -e "extrafont::embed_fonts('flagg_presentation.pdf')"
 ```
 to embed the correct font.
@@ -73,3 +73,20 @@ All of these are free, but you need to create an account at the VSP site before 
     * [RDCOMClient](http://www.omegahat.net/RDCOMClient/)
 
 # Running the Simulations
+
+The simulations are meant to be run from the root directory of the repository. To generate 3,000 realizations of each simulated site, open an R terminal and run
+```r
+source('datasets/easy.r')
+source('datasets/medium.r')
+source('datasets/hard.r')
+```
+Each of these commands could take the better part of a day to run, so be patient.
+
+Next, you will want to create some results to analyze. Make sure the GSLIB executables are somewhere in your path, then run
+```r
+source('datasets/experiment1.r')
+source('datasets/experiment2e.r')
+source('datasets/experiment2m.r')
+source('datasets/experiment2h.r')
+```
+and go do something else for a week or so while your computer computes many intersections between circles and rectangles.
