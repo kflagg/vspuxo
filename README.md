@@ -1,7 +1,7 @@
 # Visual Sample Plan and Prior Information: What do we Need to Know to Find UXO?
 ## Kenneth A Flagg, Montana State University
 
-Welcome to the online home of my MS writing project, featuring code and data files. This repository contains everything you need to reproduce my analyses and recreate my sldies and paper without actually running the simulations. It also includes all the code so you can run the simulations yourself. I have run everything successfully on Windows 10 and Debian.
+Welcome to the online home of my MS writing project, featuring code and data files. This repository contains everything you need to reproduce my analyses and recreate my sldies and paper without actually running the simulations. It also includes all the code so you can run the simulations yourself. I have run everything successfully on both Windows 10 and Debian.
 
 You can find the presentation [here](presentation/flagg_presentation.md) and the paper [here](writeup/flagg_writeup.pdf).
 
@@ -91,7 +91,7 @@ source('datasets/experiment2h.r')
 ```
 and go do something else for a week or so while your computer computes many intersections between circles and rectangles.
 
-The only Windows-only part of this project is the illustration of the sampling varability in VSP's detection probability simulation. You can run it with
+The only Windows-only part of this project is the illustration of the sampling variability in VSP's detection probability simulation. You can run it with
 ```r
 source('datasets/spacings.r')
 ```

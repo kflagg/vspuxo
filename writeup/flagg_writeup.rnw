@@ -54,7 +54,6 @@ opts_chunk$set(echo = FALSE, fig.width = 6.5, fig.height = 2.5,
 Sys.setenv(TEXINPUTS = getwd(), BIBINPUTS = getwd(), BSTINPUTS = getwd())
 
 knit_theme$set('print')
-require(xtable)
 require(spatstat)
 
 # True TAs and site
