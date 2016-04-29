@@ -2541,7 +2541,7 @@ ta <- 3
 fg <- 2
 r <- (itr-1) * ncells
 
-krige.out <- read.geoeas('../datasets/easy/exp2/rep2000_s0390_k.out')
+krige.out <- read.geoeas('../include/rep2000_s0390_k.out')
 krige.out[krige.out$Estimate == -999,] <- rep(NA, 2)
 kest <- im(matrix(krige.out$Estimate, nrow = ny[ta], byrow = TRUE),
            seq(xmin[ta], length.out = nx[ta], by = window.sizes[ta]/6),
