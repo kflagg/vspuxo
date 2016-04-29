@@ -56,7 +56,7 @@ Rscript -e "extrafont::embed_fonts('flagg_presentation.pdf')"
 to embed the correct font.
 
 If you prefer RStudio, open `flagg_writeup.rnw` in RStudio and click the "Compile PDF" button. You still need to embed the fonts, so run
-```
+```r
 extrafont::embed_fonts('flagg_presentation.pdf')
 ```
 in RStudio's terminal.
