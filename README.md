@@ -1,4 +1,4 @@
-# Visual Sample Plan and Prior Information: What do we Need to Know to Find UXO?
+# Visual Sample Plan and Prior Information: What do we need to know to find UXO?
 ## Kenneth A Flagg, Montana State University
 
 Welcome to the online home of my MS writing project, featuring code and data files. This repository contains everything you need to reproduce my analyses and recreate my sldies and paper without actually running the simulations. It also includes all the code so you can run the simulations yourself. I have run everything successfully on both Windows 10 and Debian.
