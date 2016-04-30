@@ -3,7 +3,7 @@
 
 Welcome to the online home of my MS writing project, featuring code and data files. This repository contains everything you need to reproduce my analyses and recreate my sldies and paper without actually running the simulations. It also includes all the code so you can run the simulations yourself. I have run everything successfully on both Windows 10 and Debian.
 
-This project is a simulation study investigating the influence of prior information inputs on the results produced by the unexploded ordnance target area delineation features of [Visual Sample Plan](http://vsp.pnnl.gov). This is an initial, exploratory analysis using fictitious site. I am making all of my code publically available to support discussions about my conclusions and ways to improve similar simulation studies in the future. You are welcome to send any questions, comments, or concerns to kenneth.flagg@msu.montana.edu.
+This project is a simulation study investigating the influence of prior information inputs on the results produced by the unexploded ordnance target area delineation features of [Visual Sample Plan](http://vsp.pnnl.gov). This is an initial exploratory analysis using fictitious sites. I am making all of my code publically available to support discussions about my conclusions and ways to improve similar simulation studies in the future. You are welcome to send any questions, comments, or concerns to kenneth.flagg@msu.montana.edu.
 
 You can find the full paper [here](writeup/flagg_writeup.pdf) and an outline of the 15-minute presentation [here](presentation/flagg_presentation.md).
 
