@@ -1,9 +1,10 @@
-Visual Sample Plan and Prior Information: What do we need to know to find UXO?
+﻿Visual Sample Plan and Prior Information: What do we need to know to find UXO?
 ================
 Kenneth A. Flagg
-Montana State University
-April 11, 2016
-Megan Higgs, Advisor
+----------------
+### Montana State University
+### April 11, 2016
+### Megan Higgs, Advisor
 
 Introduction and Background
 ===========================
