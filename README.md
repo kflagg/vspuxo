@@ -18,12 +18,13 @@ You can find the full paper [here](writeup/flagg_writeup.pdf) and an outline of 
     * [extrafont](https://cran.r-project.org/web/packages/extrafont/index.html)
     * [rmarkdown](http://rmarkdown.rstudio.com/)
     * [revealjs](https://cran.r-project.org/web/packages/revealjs/index.html)
+    * [png](http://www.rforge.net/png/)
 
 If you use [RStudio](https://www.rstudio.com/), you probably have all of the above already set up except for spatstat, extrafont, and revealjs.
 
 I use extrafont to make R use a clone of the Computer Modern font for the plots in the paper. After installing the extrafont package, you need to run the R command
 ```r
-font_install('fontcm')
+extrafont::font_install('fontcm')
 ```
 to install the appropriate font package.
 
