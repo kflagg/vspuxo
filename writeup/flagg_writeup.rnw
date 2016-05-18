@@ -2885,7 +2885,7 @@ using multiple sampling plans on each realization, which would typically be
 prohibitively expensive at a real site. To illustrate the inherent variability
 in the anomaly-generation process, this experiment also uses multiple
 realizations of each site. All three sites (\emph{easy}, \emph{medium}, and
-\emph{hard})are used so the effect of their differing complexity can be seen.
+\emph{hard}) are used so the effect of their differing complexity can be seen.
 
 
 \subsection{Design and Analysis}
@@ -3724,7 +3724,7 @@ abline(h = area(union.owin(TAs.medh, TA2.medh))/43560, col = 'darkred')
 @
 \caption{The \emph{medium} and \emph{hard} sites contain 62.9 acres of
 target areas. As seen at the \emph{easy} site, most of the delineated
-area does not belong to a target area..}
+area does not belong to a target area.}
 \label{effresultsmh}
 \end{figure}
 
