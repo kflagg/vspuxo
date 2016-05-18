@@ -14,13 +14,13 @@ You can find the full paper [here](writeup/flagg_writeup.pdf) and an outline of 
 * [R](http://www.r-project.org)
 * R packages:
     * [spatstat](https://cran.r-project.org/web/packages/spatstat/index.html)
-    * [knitr](http://www.yihui.name/knitr/)
-    * [extrafont](https://cran.r-project.org/web/packages/extrafont/index.html)
-    * [rmarkdown](http://rmarkdown.rstudio.com/)
-    * [revealjs](https://cran.r-project.org/web/packages/revealjs/index.html)
-    * [png](http://www.rforge.net/png/)
+    * [knitr](http://www.yihui.name/knitr/) (for the paper)
+    * [extrafont](https://cran.r-project.org/web/packages/extrafont/index.html) (for the paper)
+    * [rmarkdown](http://rmarkdown.rstudio.com/) (for the presentation)
+    * [revealjs](https://cran.r-project.org/web/packages/revealjs/index.html) (for the presentation)
+    * [png](http://www.rforge.net/png/) (for the presentation)
 
-If you use [RStudio](https://www.rstudio.com/), you probably have all of the above already set up except for spatstat, extrafont, and revealjs.
+If you use [RStudio](https://www.rstudio.com/), you probably have all of the above already set up except for spatstat, extrafont, revealjs, and png.
 
 I use extrafont to make R use a clone of the Computer Modern font for the plots in the paper. After installing the extrafont package, you need to run the R command
 ```r
@@ -68,12 +68,12 @@ in RStudio's terminal.
 
 All of these are free, but you need to create an account at the VSP site before downloading it.
 
-* [Visual Sample Plan](http://vsp.pnnl.gov)
+* [Visual Sample Plan](http://vsp.pnnl.gov) (Windows-only)
 * [GSLIB (64-bit)](http://www.gslib.com)
 * [R](http://www.r-project.org)
 * R packages:
     * [spatstat](https://cran.r-project.org/web/packages/spatstat/index.html)
-    * [RDCOMClient](http://www.omegahat.net/RDCOMClient/)
+    * [RDCOMClient](http://www.omegahat.net/RDCOMClient/) (Windows-only)
 
 # Running the Simulations
 
